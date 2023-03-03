@@ -1,4 +1,5 @@
 # Description
+A Hogwarts Legacy mod.
 Makes the Dodge's Swift/Roll/Dash/Teleport/ShadowBlink whatever you name it to be *almost* infinite
 
 # Requirements
