@@ -2,8 +2,8 @@ local shadowBlinkAbility = nil
 local isShadowBlinking = false
 
 local is_bind_registered = false
-local is_hook1_registered = false
-local is_hook2_registered = false
+local is_shadowblink_start_hook_registered = false
+local is_shadowblink_end_hook_registered = false
 
 -- Change the offset of the ShadowBlink animation end
 function SetShadowBlinkAnimationEnd(offset)
@@ -16,11 +16,11 @@ end
 -- Initialise the script
 function Init()
     print('is_bind_registered: ' .. tostring(is_bind_registered))
-    print('is_hook1_registered: ' .. tostring(is_hook1_registered))
-    print('is_hook2_registered: ' .. tostring(is_hook2_registered))
+    print('is_shadowblink_start_hook_registered: ' .. tostring(is_shadowblink_start_hook_registered))
+    print('is_shadowblink_end_hook_registered: ' .. tostring(is_shadowblink_end_hook_registered))
 
     -- Set ShadowBlink ability to be almost infinite (default value is 10)
-    SetShadowBlinkAnimationEnd(999999)
+    SetShadowBlinkAnimationEnd(999999999)
 
     -- Prevent the key bind from being initialised multiple times
     if is_bind_registered == false then
@@ -28,6 +28,7 @@ function Init()
         RegisterKeyBind(Key.C, {}, function()
             print('Pressed STOP key while ShadowBlinking? ' .. tostring(isShadowBlinking))
             print('Stopping shadow blink')
+            -- Workaround to stop the animation immediately 
             SetShadowBlinkAnimationEnd(-1)
             return
         end)
@@ -35,7 +36,7 @@ function Init()
     end
 
     -- Prevent the hook from being initialised multiple times
-    if is_hook1_registered == false then
+    if is_shadowblink_start_hook_registered == false then
         -- On ShadowBlink start
         RegisterHook("/Game/Pawn/Shared/StateTree/BTT_Biped_ShadowBlink_2.BTT_Biped_ShadowBlink_2_C:ReceiveExecute",
             function()
@@ -43,18 +44,19 @@ function Init()
                 SetShadowBlinkAnimationEnd(999999)
                 isShadowBlinking = true
             end)
-        is_hook1_registered = true
+        is_shadowblink_start_hook_registered = true
     end
 
     -- Prevent the hook from being initialised multiple times
-    if is_hook2_registered == false then
+    if is_shadowblink_end_hook_registered == false then
         -- On ShadowBlink end
         RegisterHook("/Game/Pawn/Shared/StateTree/BTT_Biped_ShadowBlink_2.BTT_Biped_ShadowBlink_2_C:ExitTask",
             function()
                 isShadowBlinking = false
                 print('ShadowBlink ended')
+                SetShadowBlinkAnimationEnd(999999)
             end)
-        is_hook2_registered = true
+        is_shadowblink_end_hook_registered = true
     end
 end
 
