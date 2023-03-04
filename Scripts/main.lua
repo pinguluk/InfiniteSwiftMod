@@ -15,6 +15,10 @@ end
 
 -- Initialise the script
 function Init()
+    print('is_bind_registered: ' .. tostring(is_bind_registered))
+    print('is_hook1_registered: ' .. tostring(is_hook1_registered))
+    print('is_hook2_registered: ' .. tostring(is_hook2_registered))
+
     -- Set ShadowBlink ability to be almost infinite (default value is 10)
     SetShadowBlinkAnimationEnd(999999)
 
@@ -23,21 +27,20 @@ function Init()
         -- Bind left control key
         RegisterKeyBind(Key.C, {}, function()
             print('Pressed STOP key while ShadowBlinking? ' .. tostring(isShadowBlinking))
-            if isShadowBlinking then
-                print('Stopping shadow blink')
-                SetShadowBlinkAnimationEnd(-1)
-                return
-            end
+            print('Stopping shadow blink')
+            SetShadowBlinkAnimationEnd(-1)
+            return
         end)
         is_bind_registered = true
     end
 
     -- Prevent the hook from being initialised multiple times
     if is_hook1_registered == false then
-        -- On ShadowBlink start, notify
+        -- On ShadowBlink start
         RegisterHook("/Game/Pawn/Shared/StateTree/BTT_Biped_ShadowBlink_2.BTT_Biped_ShadowBlink_2_C:ReceiveExecute",
             function()
                 print('ShadowBlink started')
+                SetShadowBlinkAnimationEnd(999999)
                 isShadowBlinking = true
             end)
         is_hook1_registered = true
@@ -45,12 +48,11 @@ function Init()
 
     -- Prevent the hook from being initialised multiple times
     if is_hook2_registered == false then
-        -- On ShadowBlink start, notify
+        -- On ShadowBlink end
         RegisterHook("/Game/Pawn/Shared/StateTree/BTT_Biped_ShadowBlink_2.BTT_Biped_ShadowBlink_2_C:ExitTask",
             function()
                 isShadowBlinking = false
                 print('ShadowBlink ended')
-                SetShadowBlinkAnimationEnd(999999)
             end)
         is_hook2_registered = true
     end
