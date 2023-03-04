@@ -1,6 +1,8 @@
+local stopShadowBlinkKey = Key.C -- CHANGE THE KEY HERE
+local shadowBlinkSpeed = 3000 -- CHANGE THE BLINK SPEED HERE (3000 is the default value)
+
 local shadowBlinkAbility = nil
 local isShadowBlinking = false
-local shadowBlinkSpeed = 3000 -- CHANGE THE BLINK SPEED HERE (3000 is the default value)
 
 local is_bind_registered = false
 local is_shadowblink_start_hook_registered = false
@@ -39,7 +41,7 @@ function Init()
     -- Prevent the key bind from being initialised multiple times
     if is_bind_registered == false then
         -- Bind left control key
-        RegisterKeyBind(Key.C, {}, function()
+        RegisterKeyBind(stopShadowBlinkKey, {}, function()
             print('Pressed STOP key while ShadowBlinking? ' .. tostring(isShadowBlinking))
             print('Stopping shadow blink')
             -- Workaround to stop the animation immediately 
