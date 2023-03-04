@@ -65,5 +65,5 @@ _Function_ /Game/Pawn/Student/Abilities/Locomotion/ABL_DodgeRoll_ShadowBlink_Gat
 
 # Additional info
 This is my first Unreal Engine mod ever.  
-If you find this mod is useful, consider [to make a donation](https://paypal.me/pinguluk).
-Nexus Mods page ]here](https://www.nexusmods.com/hogwartslegacy/mods/913)
+If you find this mod is useful, consider [to make a donation](https://paypal.me/pinguluk).  
+Nexus Mods page [here](https://www.nexusmods.com/hogwartslegacy/mods/913)
