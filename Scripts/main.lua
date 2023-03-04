@@ -41,8 +41,9 @@ function Init()
         RegisterHook("/Game/Pawn/Shared/StateTree/BTT_Biped_ShadowBlink_2.BTT_Biped_ShadowBlink_2_C:ReceiveExecute",
             function()
                 print('ShadowBlink started')
-                SetShadowBlinkAnimationEnd(999999)
                 isShadowBlinking = true
+                -- Reset the limit back
+                SetShadowBlinkAnimationEnd(999999999)
             end)
         is_shadowblink_start_hook_registered = true
     end
@@ -52,9 +53,10 @@ function Init()
         -- On ShadowBlink end
         RegisterHook("/Game/Pawn/Shared/StateTree/BTT_Biped_ShadowBlink_2.BTT_Biped_ShadowBlink_2_C:ExitTask",
             function()
-                isShadowBlinking = false
                 print('ShadowBlink ended')
-                SetShadowBlinkAnimationEnd(999999)
+                isShadowBlinking = false
+                -- Reset the limit back
+                SetShadowBlinkAnimationEnd(999999999)
             end)
         is_shadowblink_end_hook_registered = true
     end
