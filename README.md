@@ -49,20 +49,21 @@ and for the blink speed change the **shadowBlinkSpeed** variable
 ![image](https://user-images.githubusercontent.com/16257821/222931515-63ebc117-02cd-478b-b322-dc8949a93383.png)  
 To apply the changes without reloading the game, just press **CTRL + R** in-game and open up the map and close it, for the changes to be reapplied.
 
-# Additional useful game objects for modding:  
+# Additional useful game objects for modding:
 **Change BlinkSpeed**  
 _RootMotionModifierProperties_DodgeRoll_ /Game/Pawn/Student/Abilities/Locomotion/ABL_ShadowBlink.Default__ABL_ShadowBlink_C:ablRootMotionModifiersTask_1.RootMotionModifierProperties_DodgeRoll_0
 
 **Change ShadowBlinkAnimation**  
 _BTCustomActionDelegateBinding_ /Game/Pawn/Shared/StateTree/BTT_Biped_ShadowBlink_2.BTT_Biped_ShadowBlink_2_C:BTCustomActionDelegateBinding_0
 
-# Known/Possible bugs:
-- When traveling some distances (the chunks are recompiled or something like that), the STOP key stops working, until the data is recompiled
-- The ShadowBlink animation is kinda wonky and the effects will stop being correctly aligned/oriented
-
 **Alternative for */Game/Pawn/Student/Abilities/Locomotion/ABL_ShadowBlink.Default__ABL_ShadowBlink_C:ablRootMotionModifiersTask_1***  
 _Function_ /Game/Pawn/Student/Abilities/Locomotion/ABL_DodgeRoll_ShadowBlink_Gate.ABL_DodgeRoll_ShadowBlink_Gate_C:OnAbilityStart
+
+# Known/Possible bugs
+- When traveling some distances (the chunks are recompiled or something like that), the STOP key stops working, until the data is recompiled
+- The ShadowBlink animation is kinda wonky and the effects will stop being correctly aligned/oriented
 
 # Additional info
 This is my first Unreal Engine mod ever.  
 If you find this mod is useful, consider [to make a donation](https://paypal.me/pinguluk).
+Nexus Mods page ]here](https://www.nexusmods.com/hogwartslegacy/mods/913)
