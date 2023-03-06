@@ -60,8 +60,9 @@ _BTCustomActionDelegateBinding_ /Game/Pawn/Shared/StateTree/BTT_Biped_ShadowBlin
 _Function_ /Game/Pawn/Student/Abilities/Locomotion/ABL_DodgeRoll_ShadowBlink_Gate.ABL_DodgeRoll_ShadowBlink_Gate_C:OnAbilityStart
 
 # Known/Possible bugs
-- When traveling some distances (the chunks are recompiled or something like that), the STOP key stops working, until the data is recompiled
-- The ShadowBlink animation is kinda wonky and the effects will stop being correctly aligned/oriented
+- When traveling some distances (the chunks are recompiled or something like that), the STOP key stops working for some reason, until the data is recompiled.
+A workaround is to use the broom, to stop the swift. (WIP)
+- The ShadowBlink animation is kinda wonky and the effects will stop being correctly aligned/oriented (WIP)
 
 # Additional info
 This is my first Unreal Engine mod ever.  
