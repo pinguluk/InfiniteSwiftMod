@@ -47,7 +47,7 @@ Edit the **main.lua** from **InfiniteSwiftMod\Scripts**
 For the default stop key change the **stopShadowBlinkKey** variable  
 and for the blink speed change the **shadowBlinkSpeed** variable  
 ![image](https://user-images.githubusercontent.com/16257821/222931515-63ebc117-02cd-478b-b322-dc8949a93383.png)  
-To apply the changes without reloading the game, just press **CTRL + R** in-game and open up the map and close it, for the changes to be reapplied.
+To apply the changes without reloading the game, just press CTRL + R in-game and use the fast travel once, for the changes to be reapplied.
 
 # Additional useful game objects for modding:
 **Change BlinkSpeed**  
