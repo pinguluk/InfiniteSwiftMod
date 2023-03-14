@@ -47,7 +47,7 @@ Edit the **main.lua** from **InfiniteSwiftMod\Scripts**
 For the default stop key change the **stopShadowBlinkKey** variable  
 and for the blink speed change the **shadowBlinkSpeed** variable  
 ![image](https://user-images.githubusercontent.com/16257821/222931515-63ebc117-02cd-478b-b322-dc8949a93383.png)  
-To apply the changes without reloading the game, just press **CTRL + R** in-game and open up the map and close it, for the changes to be reapplied.
+To apply the changes without reloading the game, just press CTRL + R in-game and use the fast travel once, for the changes to be reapplied.
 
 # Additional useful game objects for modding:
 **Change BlinkSpeed**  
@@ -60,8 +60,9 @@ _BTCustomActionDelegateBinding_ /Game/Pawn/Shared/StateTree/BTT_Biped_ShadowBlin
 _Function_ /Game/Pawn/Student/Abilities/Locomotion/ABL_DodgeRoll_ShadowBlink_Gate.ABL_DodgeRoll_ShadowBlink_Gate_C:OnAbilityStart
 
 # Known/Possible bugs
-- When traveling some distances (the chunks are recompiled or something like that), the STOP key stops working, until the data is recompiled
-- The ShadowBlink animation is kinda wonky and the effects will stop being correctly aligned/oriented
+- When traveling some distances (the chunks are recompiled or something like that), the STOP key stops working for some reason, until the data is recompiled.
+A workaround is to use the broom, to stop the swift. (WIP)
+- The ShadowBlink animation is kinda wonky and the effects will stop being correctly aligned/oriented (WIP)
 
 # Additional info
 This is my first Unreal Engine mod ever.  
